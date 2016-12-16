@@ -1,0 +1,45 @@
+p {
+  font-family: 'Inconsolata', monospace;
+}
+
+.navImg {
+  float: left;
+  padding: 0px
+}
+
+.title {
+  float: right;
+  padding: 20px;
+  color: #fff;
+}
+
+.navbar-lore {
+  background-color:#468499;
+  border-radius: 0px;
+}
+ .title {
+   font-family: 'Raleway', sans-serif;
+ }
+
+ .follow {
+   font-family: 'Inconsolata', monospace;
+   font-size: 10px;
+   color: #00ff7f;
+   float: right;
+   padding-top: 20px;
+ }
+
+.follow {
+  float: right;
+  padding: 10px;
+}
+
+.intro {
+ margin-top: 60px
+}
+
+.intro-img {
+  max-width: 100%;
+  height: auto;
+  padding: 20px;
+}
