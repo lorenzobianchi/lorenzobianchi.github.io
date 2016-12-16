@@ -1,14 +1,19 @@
+body {
+  padding: 0;
+  margin: 0;
+}
 p {
   font-family: 'Inconsolata', monospace;
 }
 
 .navImg {
   float: left;
-  padding: 0px
+  padding: 10px
+
 }
 
 .title {
-  float: right;
+  float: left;
   padding: 20px;
   color: #fff;
 }
