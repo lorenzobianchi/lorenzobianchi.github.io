@@ -16,6 +16,8 @@ p {
 .navbar-lore {
   background-color:#468499;
   border-radius: 0px;
+  height: 100px;
+  width: 100%;
 }
  .title {
    font-family: 'Raleway', sans-serif;
@@ -36,6 +38,9 @@ p {
 
 .intro {
  margin-top: 60px
+ width: 60%;
+ margin-left: 20%;
+ margin-right: 20%;
 }
 
 .intro-img {
