@@ -14,8 +14,9 @@ p {
 
 .title {
   float: left;
-  padding: 20px;
+  padding: 10px;
   color: #fff;
+  font-family: 'Inconsolata', monospace;
 }
 
 .navbar-lore {
@@ -24,21 +25,23 @@ p {
   height: 100px;
   width: 100%;
 }
- .title {
-   font-family: 'Raleway', sans-serif;
- }
 
- .follow {
+ p.follow {
    font-family: 'Inconsolata', monospace;
    font-size: 10px;
    color: #00ff7f;
-   float: right;
+   position: absolute;
+   right: 20px;
+   top: 30px;
    padding-top: 20px;
+   margin-right: 5px;
+   padding-right: 0px;
  }
 
 .follow {
   float: right;
   padding: 10px;
+  margin-right: 20px;
 }
 
 .intro {
