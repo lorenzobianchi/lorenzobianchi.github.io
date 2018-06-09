@@ -1,51 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Lorenzobianchi.GitHub.io by lorenzobianchi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Raleway" rel="stylesheet" />
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+     <!-- Flexslider  -->
+    <link rel="stylesheet" href="css/flexslider.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+     <!-- Modernizr JS -->
+     <script src="js/modernizr-2.6.2.min.js"></script>
+     <!-- FOR IE9 below -->
+     <!--[if lt IE 9]>
+     <script src="js/respond.min.js"></script>
+     <![endif]-->
 
-    <title>Lorenzobianchi.GitHub.io by lorenzobianchi</title>
+
   </head>
+<body>
+  <div id="fh5co-page">
+    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+      <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
-  <body>
-    <nav class="navbar navbar-lore">
-      <a class="navbar-brand" href="#">
-        <img src="images/django.png" alt="logo" class="navImg"/>
-        <h4 class="title">lorenzobianchi.github.io</h4>
-      </a>
-      <a href="https://github.com/lorenzobianchi" class="follow">
-        <img src="images/Octocat.png" alt="logo" class="navImg"/>
-        <p class="follow">follow me on github!</p>
-      </a>
-    </nav>
-
-
-
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 offset-md-2 intro">
-            <p>Hello! My name is Lorenzo Bianchi and I am ....... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-            <img class="intro-img img-responsive" src="images/lore-elba.png" alt="Lorenzo Bianchi" />
-          </div>
+        <div id="fh5co-logo">
+          <a href="index.html">Lo_RE</a>
+          <span class='nav-description'>Lorenzo Bianchi</span>
         </div>
-      </div>
-    </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+        <nav id="fh5co-main-menu" role="navigation">
+          <ul>
+            <li class="fh5co-active"><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
 
+        <div class="fh5co-footer">
+          <p><small>Hello I'm Lorenzo Bianchi, a frontend developer and this is my personal website</small></p>
+          <ul>
+            <li><a href="#"><i class="icon-github"></i></a></li>
+            <li><a href="#"><i class="icon-twitter2"></i></a></li>
+            <li><a href="#"><i class="icon-instagram"></i></a></li>
+          </ul>
+        </div>
+
+      </aside>
+
+      <div id="fh5co-main">
+        <aside id="fh5co-hero" class="js-fullheight">
+          <div class="flexslider js-fullheight">
+            <div class="intro">
+              <h1>LORENZO <img src="images/django.png" alt="logo" class="navImg"/></h1>
+              <p>Hello! My name is Lorenzo Bianchi and I am Front end developer in constant evolution .... the sky is the limit! </p>
+            </div>
+            <div class="d-inline-flex">
+              <img class="intro-img img-responsive" src="images/lore-elba.png" alt="Lorenzo Bianchi" />
+              <div class="container">
+                <img class="intro-img img-responsive experiment" src="images/lore.jpeg" alt="Lorenzo Bianchi" />
+                <div class="overlay">
+                  <div class="text">This is Django, my dog 🐶</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
   </body>
 </html>
