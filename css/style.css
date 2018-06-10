@@ -106,7 +106,8 @@ figure figcaption {
   font-size: 18px;
 }
 
-.intro img {
+.intro img,
+.contact img {
   padding-bottom: 20px;
 }
 
@@ -150,6 +151,18 @@ figure figcaption {
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
+
+.contact {
+  padding: 30px;
+  height: 100vh;
+}
+
+.contact h1 {
+  font-weight: bold;
+  font-size: 92px;
+  color: 	#483D8B;
+}
+
 
 #fh5co-page {
   width: 100%;
