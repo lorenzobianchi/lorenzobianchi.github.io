@@ -106,9 +106,21 @@ figure figcaption {
   font-size: 18px;
 }
 
-.intro img,
+.intro img {
+  padding-bottom: 20px;
+}
 .contact img {
   padding-bottom: 20px;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.marker {
+    display: block;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
 }
 
 .experiment {
@@ -160,9 +172,16 @@ figure figcaption {
 .contact h1 {
   font-weight: bold;
   font-size: 92px;
-  color: 	#483D8B;
+  color: 	#333;
 }
 
+.contact-text {
+  font-size: 18px;
+  color: inherit;
+  position: relative;
+  bottom: 5px;
+  padding-left: 12px;
+}
 
 #fh5co-page {
   width: 100%;

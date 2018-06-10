@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Lorenzobianchi.GitHub.io by lorenzobianchi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet' />
+
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Raleway" rel="stylesheet" />
     <link href="https://unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -25,8 +27,8 @@
      <!--[if lt IE 9]>
      <script src="js/respond.min.js"></script>
      <![endif]-->
-
-
+     <!-- mapbox -->
+     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
   </head>
 <body>
   <div id="fh5co-page">
@@ -40,11 +42,11 @@
 
         <nav id="fh5co-main-menu" role="navigation">
           <ul>
-            <li class="fh5co-active"><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li class="fh5co-active"><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
 
@@ -64,22 +66,68 @@
           <div class="flexslider js-fullheight">
             <div class="contact">
               <h1>CONTACT <img src="images/django.png" alt="logo" class="navImg"/></h1>
-              <h2 class='text-muted mt-5'><i class="icon ion-ios-phone-portrait"></i> 0039 366 3594205</h2>
-              <h2 class='text-muted'><i class="icon ion-ios-mail"></i> lorebianchi123@gmail.com</h2>
-              <h2 class='text-muted'><i class="icon ion-logo-github"></i> https://github.com/lorenzobianchi</h2>
-              <canvas id="canvas"></canvas>
+              <h2 class='text-muted mt-5 mb-2'>
+                <i class="icon ion-ios-phone-portrait pr-3"></i> <span class='contact-text'>0039 366 3594205</span>
+              </h2>
+              <h2 class='text-muted mb-2'>
+                <i class="icon ion-ios-mail"></i> <a href='mailto:lorebianchi123@gmail,com' class='contact-text'>lorebianchi123@gmail.com</a>
+              </h2>
+              <h2 class='text-muted mb-2'>
+                <i class="icon ion-logo-github"></i> <a href='https://github.com/lorenzobianchi' target='_blank' class='contact-text'>https://github.com/lorenzobianchi</a>
+              </h2>
+              <h2 class='text-muted mb-5'>
+                <i class="icon ion-md-compass"></i> <span class='contact-text'>Pumenengo (BG) - 24050 - Italy</span>
+              </h2>
+              <div id='map' style='width: 100%; height: 240px;border: 1px solid'></div>
             </div>
           </div>
         </aside>
 
       <script type="text/javascript">
-      var canvas = document.getElementById('canvas');
-      var ctx = canvas.getContext('2d');
+      mapboxgl.accessToken = 'pk.eyJ1IjoibG9yZWJpYW5jaGkiLCJhIjoiY2ppOHE0dHU2MGc4MDNxcGU4ZzR5bzU3aSJ9.wroKzWroGQ9PNFegDZMz-w';
+      var geojson = {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "properties": {
+                    "message": "Here I am",
+                    "iconSize": [60, 60]
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        9.867680,
+                        45.480943
+                    ]
+                }
+            }
+        ]
+      };
+      var map = new mapboxgl.Map({
+          container: 'map',
+          center: [9.867680, 45.480943],
+          zoom: 6,
+          style: 'mapbox://styles/mapbox/light-v9'
+      });
+      geojson.features.forEach(function(marker) {
+          // create a DOM element for the marker
+          var el = document.createElement('div');
+          el.className = 'marker';
+          el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
+          el.style.width = marker.properties.iconSize[0] + 'px';
+          el.style.height = marker.properties.iconSize[1] + 'px';
 
-      ctx.rect(10, 10, 700, 200);
-      ctx.stroke();
-      console.log(ctx.isPointInPath(10, 10)); // true
-      </script>
+          el.addEventListener('click', function() {
+              window.alert(marker.properties.message);
+          });
+
+          // add marker to map
+          new mapboxgl.Marker(el)
+              .setLngLat(marker.geometry.coordinates)
+              .addTo(map);
+      });
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
