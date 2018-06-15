@@ -41,8 +41,8 @@
         <nav id="fh5co-main-menu" role="navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li class="fh5co-active"><a href="about.html">About</a></li>
+            <li class="fh5co-active"><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -61,18 +61,13 @@
       <div id="fh5co-main">
         <aside id="fh5co-hero" class="js-fullheight">
           <div class="flexslider js-fullheight">
-            <div class="intro">
-              <h1>ABOUT <img src="images/django.png" alt="logo" class="navImg pull-right"/></h1>
-              <p>Hello, my name is Lorenzo and I come from Bergamo (Italy). Since 2015 I have been working as Front End developer. I love my job and I try to constantly learn new things, to do my job better, and because I like it. </p>
-              <p>This site is under construction...</p>
-            </div>
-            <div class="d-inline-flex">
-              <img class="intro-img img-responsive" src="images/lore-elba.png" alt="Lorenzo Bianchi" />
-              <div class="container">
-                <img class="intro-img img-responsive experiment" src="images/lore.jpeg" alt="Lorenzo Bianchi" />
-                <div class="overlay">
-                  <div class="text">This is my very first meeting with Django, my beautiful dog 🐶</div>
+            <div class="portfolio">
+              <h1 class="text-uppercase">portfolio <img src="images/django.png" alt="logo" class="navImg pull-right" data-toggle="tooltip" data-placement="top" title="My owner is the best in town !!" /></h1>
+              <div class="home-container">
+                <div class="home-links-container">
+
                 </div>
+                <p style="color:black;">Under construction</p>
               </div>
             </div>
           </div>
@@ -82,6 +77,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-
+    <script type="text/javascript">
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+    </script>
   </body>
 </html>
