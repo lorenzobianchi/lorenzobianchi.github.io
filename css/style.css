@@ -135,7 +135,7 @@ figure figcaption {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  color: lime;
+  color: darkslategrey;
   font-size: 28px;
   padding-right: 20px;
   font-weight: bold;
