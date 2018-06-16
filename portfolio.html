@@ -63,17 +63,15 @@
           <div class="flexslider js-fullheight">
             <div class="portfolio">
               <h1 class="text-uppercase">portfolio <img src="images/django.png" alt="logo" class="navImg pull-right" data-toggle="tooltip" data-placement="top" title="My owner is the best in town !!" /></h1>
-              <div class="home-container">
-                <div class="home-links-container">
-
-                </div>
-                <p style="color:black;">Under construction</p>
+              <!-- <div class="chart"></div> -->
+              <div class='w-100 my-5 pb-5'>
+                <canvas id="myCanvas" width="800" height="400"></canvas>
               </div>
             </div>
           </div>
         </aside>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
@@ -82,5 +80,59 @@
       $('[data-toggle="tooltip"]').tooltip()
     })
     </script>
+    <script type="text/javascript">
+    d3.select(".chart").append("h1").text("d3 test").style("color", 'hotpink')
+    var data = [70, 112, 45, 54, 89, 150]
+    d3.select(".chart")
+      .selectAll("div")
+      .data(data)
+      .enter()
+      .append("div")
+      .style("width", function(d) { return d + "px";})
+      .text(function(d) { return d + "%"; })
+      </script>
+
+    <script type="text/javascript">
+     var canvas = document.getElementById("myCanvas");
+     var ctx = canvas.getContext("2d");
+     var x = canvas.width/2;
+     var y = canvas.height-30;
+     var dx = -1;
+     var dy = -2;
+     var ballRadius = 15;
+     function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+     var color = "#0095DD"
+
+     function drawBall() {
+         ctx.beginPath();
+         ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+         ctx.fillStyle = color;
+         ctx.fill();
+         ctx.closePath();
+     }
+
+     function draw() {
+         ctx.clearRect(0, 0, canvas.width, canvas.height);
+         drawBall();
+         if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+              dx = -dx;
+              color = getRandomColor();
+            }
+         if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+              dy = -dy;
+              color = getRandomColor();
+            }
+         x += dx;
+         y += dy;
+     }
+     setInterval(draw, 8);
+   </script>
   </body>
 </html>

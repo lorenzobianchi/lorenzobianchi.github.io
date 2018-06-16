@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>DOM Tests</title>
+    <script type="application/javascript">
+    function setBodyAttr(attr, value){
+      if (document.body) eval('document.body.'+attr+'="'+value+'"');
+      else notSupported();
+    }
+    </script>
+  </head>
+  <body>
+    <div style="margin: .5in; height: 400;">
+      <div style="display:inline-flex;width:100%;">
+        <div style="flex:1">
+          <p><b><tt>text</tt></b></p>
+          <form>
+            <select onChange="setBodyAttr('text',
+            this.options[this.selectedIndex].value);">
+              <option value="black">black
+              <option value="darkblue">darkblue
+              <option value="red">red
+
+            </select>
+            <p><b><tt>bgColor</tt></b></p>
+            <select onChange="setBodyAttr('bgColor',
+            this.options[this.selectedIndex].value);">
+              <option value="white">white
+              <option value="lightgrey">gray
+              <option value="orange">orange
+              <option value="lime">lime
+              <option value="cyan">cyan
+              <option value="black">black
+            </select>
+            <p><b><tt>link</tt></b></p>
+            <select onChange="setBodyAttr('link',
+            this.options[this.selectedIndex].value);">
+              <option value="blue">blue
+              <option value="green">green
+            </select>  <small>
+            <a href="http://www.brownhen.com/dom_api_top.html" id="sample">
+            (sample link)</a></small><br>
+          </form>
+          <form>
+            <input type="button" value="version" onclick="ver()" />
+          </form>
+        </div>
+        <div class="bg-white" style="flex:1">
+          <h3>Testing the DOM API</h3>
+          <p>This document provides samples for every interface that you can use in your own web development. In some cases, the samples are complete HTML pages, with the DOM access in a <code>script</code> element, the interface (e.g, buttons) necessary to fire up the script in a form, and the HTML elements upon which the DOM operates listed as well. When this is the case, you can cut and paste the example into a new HTML document, save it, and run the example from the browser.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
